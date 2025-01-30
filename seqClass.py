@@ -18,9 +18,17 @@ args = parser.parse_args()
 args.seq = args.seq.upper() # Make all your letters in upper cases
 if re.search('^[ACGTU]+$', args.seq):
     if re.search('U', args.seq):# Check if there is a U in your sequence
-        print ('The sequence is RNA')
+        print ('The sequence is RNA','\n',
+               'Nucleotide A content: ', round(args.seq.count("A") / len(args.seq) * 100, 2),'%','\n',
+               'Nucleotide U content: ', round(args.seq.count("U") / len(args.seq) * 100, 2),'%','\n',
+               'Nucleotide G content: ', round(args.seq.count("G") / len(args.seq) * 100, 2),'%','\n',
+               'Nucleotide C content: ', round(args.seq.count("C") / len(args.seq) * 100, 2),'%', sep='')
     elif re.search('A|T|G|C', args.seq): # Check if there is a A, T, G or C in your sequence
-        print ('The sequence is DNA')
+        print ('The sequence is DNA','\n', 
+               'Nucleotide A content: ', round(args.seq.count("A") / len(args.seq) * 100, 2),'%','\n',
+               'Nucleotide T content: ', round(args.seq.count("T") / len(args.seq) * 100, 2),'%','\n',
+               'Nucleotide G content: ', round(args.seq.count("G") / len(args.seq) * 100, 2),'%','\n',
+               'Nucleotide C content: ', round(args.seq.count("C") / len(args.seq) * 100, 2),'%', sep='')
     else:
         print ('The sequence can be DNA or RNA')
 else:
