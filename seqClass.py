@@ -44,6 +44,6 @@ if args.motif:
     args.motif = args.motif.upper() # Make all your letter in upper case
     print(f'Motif search enabled: looking for motif "{args.motif}" in sequence "{args.seq}"... ', end = '')
     if re.search(args.motif, args.seq):
-        print("YES")
+        print("YES MOTIF")
     else:
-        print("NO")
+        print("NO MOTIF")
